@@ -17,6 +17,6 @@ resource "google_compute_firewall" "allow_masters_range" {
     protocol = "all"
   }
 
-  source_ranges = ["172.16.0.0/16"]
+  source_ranges = ["172.16.0.0/28"]
 }
 
