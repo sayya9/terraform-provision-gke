@@ -9,14 +9,14 @@ resource "google_compute_firewall" "only_internal_traffic" {
   source_ranges = ["10.0.0.0/8"]
 }
 
-resource "google_compute_firewall" "allow_masters_range" {
-  name    = "allow-masters-range"
+resource "google_compute_firewall" "master_webhooks" {
+  name    = "gke-allow-master-webhooks"
   network = google_compute_network.gke_vpc.name
 
   allow {
-    protocol = "all"
+    protocol = "tcp"
+    ports = ["443"]
   }
 
   source_ranges = ["172.16.0.0/28"]
 }
-
