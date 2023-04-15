@@ -27,7 +27,7 @@ Update the configurations`gke.tfvars` based on your personal requirements.
 Let's get started with Terraform to build a GKE Cluster.
 ```
 terraform init
-terraform plan
+terraform plan -var-file gke.tfvars
 terraform apply -var-file gke.tfvars
 ```
 
