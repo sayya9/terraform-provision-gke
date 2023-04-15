@@ -1,5 +1,5 @@
 resource "google_container_cluster" "gke_masters" {
-  name                     = "devops-demo-gke-${var.deploy_env}-${var.region}"
+  name                     = "devops-demo-gke"
   location                 = "${var.region}"
   min_master_version       = "1.24"
   remove_default_node_pool = true

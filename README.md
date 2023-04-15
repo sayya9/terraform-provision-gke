@@ -34,7 +34,7 @@ terraform apply -var-file gke.tfvars
 ## Connecting to the GKE
 Now that your cluster is provisioned, use gcloud to retrieve the cluster configuration for `kubectl`.
 ```
-gcloud container clusters get-credentials gke-example --region asia-east1
+gcloud container clusters get-credentials devops-demo-gke --region asia-east1
 ```
 
 ## Testing
