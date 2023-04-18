@@ -15,7 +15,7 @@ resource "google_compute_firewall" "master_webhooks" {
 
   allow {
     protocol = "tcp"
-    ports = ["443"]
+    ports = ["443", "8443"]
   }
 
   source_ranges = ["172.16.0.0/28"]
