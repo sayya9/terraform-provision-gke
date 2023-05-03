@@ -3,6 +3,12 @@ resource "google_service_account" "gke" {
   display_name = "gke-${var.deploy_env}-${var.region}"
 }
 
+resource "google_project_iam_member" "allow_image_pull" {
+  project = var.project_id
+  role    = "roles/storage.objectViewer"
+  member  = "serviceAccount:${google_service_account.gke.email}"
+}
+
 resource "google_container_node_pool" "stateful" {
   name               = "stateful-${var.region}"
   cluster            = google_container_cluster.gke_masters.id
