@@ -26,6 +26,12 @@ resource "google_compute_subnetwork" "gke_private" {
   network                  = google_compute_network.gke_vpc.id
   private_ip_google_access = true
 
+  log_config {
+    aggregation_interval = "INTERVAL_30_SEC"
+    flow_sampling        = 0.5
+    metadata             = "INCLUDE_ALL_METADATA"
+  }
+
   secondary_ip_range {
     range_name    = "k8s-pod-range"
     ip_cidr_range = var.pod_cidr
