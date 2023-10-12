@@ -35,7 +35,7 @@ resource "google_container_cluster" "gke_masters" {
   }
 
   release_channel {
-    channel = "STABLE"
+    channel = "UNSPECIFIED"
   }
 
   ip_allocation_policy {

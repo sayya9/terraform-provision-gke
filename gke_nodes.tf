@@ -38,6 +38,11 @@ resource "google_container_node_pool" "stateful" {
       "https://www.googleapis.com/auth/cloud-platform"
     ]
   }
+
+  management {
+    auto_upgrade = false
+    auto_repair  = true
+  }
 }
 
 resource "google_container_node_pool" "spot" {
