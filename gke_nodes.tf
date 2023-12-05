@@ -43,6 +43,8 @@ resource "google_container_node_pool" "stateful" {
     auto_upgrade = false
     auto_repair  = true
   }
+
+  version = "1.24"
 }
 
 resource "google_container_node_pool" "spot" {
